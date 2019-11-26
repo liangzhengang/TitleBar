@@ -43,7 +43,9 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
 }
-
+dependencies {
+    implementation 'com.android.support:support-annotations:25.1.1'
+}
 artifacts {
     archives javadocJar
     archives sourcesJar

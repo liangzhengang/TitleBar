@@ -1,7 +1,6 @@
 package com.hjq.bar;
 
-import android.annotation.DrawableRes;
-import android.annotation.StringRes;
+
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
@@ -12,6 +11,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.StringRes;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;

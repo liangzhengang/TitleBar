@@ -1,9 +1,9 @@
 package com.hjq.bar;
 
-import android.annotation.DrawableRes;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.annotation.DrawableRes;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
