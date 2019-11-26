@@ -14,6 +14,7 @@ import android.os.Build;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -29,10 +30,10 @@ import com.hjq.bar.style.TitleBarRippleStyle;
 import com.hjq.bar.style.TitleBarTransparentStyle;
 
 /**
- *    author : Android 轮子哥
- *    github : https://github.com/getActivity/TitleBar
- *    time   : 2018/08/17
- *    desc   : Android 通用标题栏
+ * author : Android 轮子哥
+ * github : https://github.com/getActivity/TitleBar
+ * time   : 2018/08/17
+ * desc   : Android 通用标题栏
  */
 public final class TitleBar extends FrameLayout
         implements View.OnClickListener, Runnable {
@@ -46,7 +47,9 @@ public final class TitleBar extends FrameLayout
     private TextView mLeftView, mTitleView, mRightView;
     private View mLineView;
 
-    /** 标记是否初始化完成 */
+    /**
+     * 标记是否初始化完成
+     */
     private boolean isOk;
 
     public TitleBar(Context context) {
@@ -170,7 +173,8 @@ public final class TitleBar extends FrameLayout
                             // 设置标题
                             setTitle(label);
                         }
-                    } catch (PackageManager.NameNotFoundException ignored) {}
+                    } catch (PackageManager.NameNotFoundException ignored) {
+                    }
                 }
             }
         }
@@ -182,7 +186,7 @@ public final class TitleBar extends FrameLayout
         // 图标设置
         if (array.hasValue(R.styleable.TitleBar_leftIcon)) {
             setLeftIcon(ViewBuilder.getDrawable(getContext(), array.getResourceId(R.styleable.TitleBar_leftIcon, 0)));
-        }else {
+        } else {
             if (array.getBoolean(R.styleable.TitleBar_backButton, mCurrentStyle.getBackIcon() != null)) {
                 // 显示默认的返回图标
                 setLeftIcon(mCurrentStyle.getBackIcon());
@@ -206,20 +210,20 @@ public final class TitleBar extends FrameLayout
         // 背景设置
         if (array.hasValue(R.styleable.TitleBar_leftBackground)) {
             setLeftBackground(array.getDrawable(R.styleable.TitleBar_leftBackground));
-        }else {
+        } else {
             setLeftBackground(mCurrentStyle.getLeftBackground());
         }
 
         if (array.hasValue(R.styleable.TitleBar_rightBackground)) {
             setRightBackground(array.getDrawable(R.styleable.TitleBar_rightBackground));
-        }else {
+        } else {
             setRightBackground(mCurrentStyle.getRightBackground());
         }
 
         // 分割线设置
         if (array.hasValue(R.styleable.TitleBar_lineColor)) {
             setLineDrawable(array.getDrawable(R.styleable.TitleBar_lineColor));
-        }else {
+        } else {
             setLineDrawable(mCurrentStyle.getLineDrawable());
         }
 
@@ -363,8 +367,12 @@ public final class TitleBar extends FrameLayout
         return setLeftIcon(ViewBuilder.getDrawable(getContext(), id));
     }
 
+    private static final String TAG = "TitleBar";
+
     public TitleBar setLeftIcon(Drawable drawable) {
-        mLeftView.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
+        drawable.setBounds(0, 0, 80, 50);
+        Log.d(TAG, "setLeftIcon: ");
+        mLeftView.setCompoundDrawables(drawable, null, null, null);
         post(this);
         return this;
     }
@@ -481,6 +489,7 @@ public final class TitleBar extends FrameLayout
     public TitleBar setLineColor(int color) {
         return setLineDrawable(new ColorDrawable(color));
     }
+
     public TitleBar setLineDrawable(Drawable drawable) {
         ViewBuilder.setBackground(mLineView, drawable);
         return this;
@@ -568,11 +577,11 @@ public final class TitleBar extends FrameLayout
     /**
      * 初始化全局的TitleBar样式
      *
-     * @param style         样式实现类，框架已经实现三种不同的样式
-     *                      日间模式：{@link TitleBarLightStyle}
-     *                      夜间模式：{@link TitleBarNightStyle}
-     *                      透明模式：{@link TitleBarTransparentStyle}
-     *                      水波纹模式：{@link TitleBarRippleStyle}
+     * @param style 样式实现类，框架已经实现三种不同的样式
+     *              日间模式：{@link TitleBarLightStyle}
+     *              夜间模式：{@link TitleBarNightStyle}
+     *              透明模式：{@link TitleBarTransparentStyle}
+     *              水波纹模式：{@link TitleBarRippleStyle}
      */
     public static void initStyle(ITitleBarStyle style) {
         TitleBar.sDefaultStyle = style;

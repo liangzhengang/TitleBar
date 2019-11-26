@@ -94,6 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                app:leftIcon="@mipmap/bar_icon_back_black"
                 app:lineVisible="false"
                 app:title="不带分割线的标题栏" />
 
