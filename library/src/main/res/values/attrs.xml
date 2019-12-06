@@ -31,4 +31,16 @@
         <attr name="lineColor" format="reference|color" />
         <attr name="lineSize" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="DrawableTextView" tools:ignore="ResourceName">
+        <attr name="leftDrawable" format="reference" />
+        <attr name="leftDrawableWidth" format="dimension" />
+        <attr name="leftDrawableHeight" format="dimension" />
+        <attr name="rightDrawable" format="reference" />
+        <attr name="rightDrawableWidth" format="dimension" />
+        <attr name="rightDrawableHeight" format="dimension" />
+        <attr name="topDrawable" format="reference" />
+        <attr name="topDrawableWidth" format="dimension" />
+        <attr name="topDrawableHeight" format="dimension" />
+    </declare-styleable>
 </resources>

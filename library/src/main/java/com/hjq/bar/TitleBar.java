@@ -44,7 +44,7 @@ public final class TitleBar extends FrameLayout
     private OnTitleBarListener mListener;
 
     private LinearLayout mMainLayout;
-    private TextView mLeftView, mTitleView, mRightView;
+    private DrawableTextView mLeftView, mTitleView, mRightView;
     private View mLineView;
 
     /**
