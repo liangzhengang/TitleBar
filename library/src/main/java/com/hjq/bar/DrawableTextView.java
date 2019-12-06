@@ -34,6 +34,30 @@ public class DrawableTextView extends TextView {
         init(context, attrs);
     }
 
+    public void setLeftWidth(int leftWidth) {
+        this.leftWidth = leftWidth;
+    }
+
+    public void setRightWidth(int rightWidth) {
+        this.rightWidth = rightWidth;
+    }
+
+    public void setTopWidth(int topWidth) {
+        this.topWidth = topWidth;
+    }
+
+    public void setLeftHeight(int leftHeight) {
+        this.leftHeight = leftHeight;
+    }
+
+    public void setRightHeight(int rightHeight) {
+        this.rightHeight = rightHeight;
+    }
+
+    public void setTopHeight(int topHeight) {
+        this.topHeight = topHeight;
+    }
+
     void init(Context context, @Nullable AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.DrawableTextView);
         drawableLeft = typedArray.getDrawable(R.styleable.DrawableTextView_leftDrawable);
