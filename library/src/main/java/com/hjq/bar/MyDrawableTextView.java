@@ -124,7 +124,7 @@ public class MyDrawableTextView extends TextView {
      * 设置右侧图片并重绘
      */
     public void setDrawableRight(Drawable drawableRight) {
-        this.drawableRight = drawableLeft;
+        this.drawableRight = drawableRight;
         invalidate();
     }
 
