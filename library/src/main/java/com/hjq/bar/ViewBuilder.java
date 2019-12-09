@@ -33,8 +33,8 @@ final class ViewBuilder {
         return lineView;
     }
 
-    static DrawableTextView newLeftView(Context context) {
-        DrawableTextView leftView = new DrawableTextView(context);
+    static MyDrawableTextView newLeftView(Context context) {
+        MyDrawableTextView leftView = new MyDrawableTextView(context);
         leftView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
         leftView.setGravity(Gravity.CENTER_VERTICAL);
         leftView.setFocusable(true);
@@ -44,8 +44,8 @@ final class ViewBuilder {
         return leftView;
     }
 
-    static DrawableTextView newTitleView(Context context) {
-        DrawableTextView titleView = new DrawableTextView(context);
+    static MyDrawableTextView newTitleView(Context context) {
+        MyDrawableTextView titleView = new MyDrawableTextView(context);
         titleView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1));
         titleView.setGravity(Gravity.CENTER);
         titleView.setFocusable(true);
@@ -61,8 +61,8 @@ final class ViewBuilder {
         return titleView;
     }
 
-    static DrawableTextView newRightView(Context context) {
-        DrawableTextView rightView = new DrawableTextView(context);
+    static MyDrawableTextView newRightView(Context context) {
+        MyDrawableTextView rightView = new MyDrawableTextView(context);
         rightView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
         rightView.setGravity(Gravity.CENTER_VERTICAL);
         rightView.setFocusable(true);

@@ -32,7 +32,7 @@
         <attr name="lineSize" format="dimension" />
     </declare-styleable>
 
-    <declare-styleable name="DrawableTextView" tools:ignore="ResourceName">
+    <declare-styleable name="MyDrawableTextView" tools:ignore="ResourceName">
         <attr name="leftDrawable" format="reference" />
         <attr name="leftDrawableWidth" format="dimension" />
         <attr name="leftDrawableHeight" format="dimension" />

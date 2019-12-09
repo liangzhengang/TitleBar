@@ -14,7 +14,6 @@ import android.os.Build;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -44,7 +43,7 @@ public final class TitleBar extends FrameLayout
     private OnTitleBarListener mListener;
 
     private LinearLayout mMainLayout;
-    private DrawableTextView mLeftView, mTitleView, mRightView;
+    private MyDrawableTextView mLeftView, mTitleView, mRightView;
     private View mLineView;
 
     /**
@@ -69,7 +68,6 @@ public final class TitleBar extends FrameLayout
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-
         // 设置 TitleBar 的宽度
         switch (MeasureSpec.getMode(widthMeasureSpec)) {
             case MeasureSpec.AT_MOST:
@@ -370,9 +368,8 @@ public final class TitleBar extends FrameLayout
     private static final String TAG = "TitleBar";
 
     public TitleBar setLeftIcon(Drawable drawable) {
-        drawable.setBounds(0, 0, 80, 50);
-        Log.d(TAG, "setLeftIcon: ");
-        mLeftView.setCompoundDrawables(drawable, null, null, null);
+        mLeftView.setDrawableLeft(drawable);
+//        mLeftView.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
         post(this);
         return this;
     }
@@ -389,7 +386,8 @@ public final class TitleBar extends FrameLayout
     }
 
     public TitleBar setRightIcon(Drawable drawable) {
-        mRightView.setCompoundDrawablesWithIntrinsicBounds(null, null, drawable, null);
+        mRightView.setDrawableRight(drawable);
+//        mRightView.setCompoundDrawablesWithIntrinsicBounds(null, null, drawable, null);
         post(this);
         return this;
     }
